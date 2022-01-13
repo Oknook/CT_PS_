@@ -2,31 +2,22 @@
 ### BOJ, leetcode, programmers, etc...
 <br>
 <br>
-<br>
 
 ###### C++      for BOJ, leetcode(first)
 ###### python3  for programmers, leetcode(second)
-<br>
-<br>
 <br>
 
 ##### baekjoon(BOJ)
 1. steps -> 단계별로 문제풀이
 2. solved_class -> solved.ac 기준 클래스별 steps에 포함되지 않은 문제 순서로 풀이
 <br>
-<br>
-<br>
 
 ##### leetcode
 + daily challenge -> 매일 제시되는 daily 문제를 풀이
 <br>
-<br>
-<br>
 
 ##### programmers
 + 잠시 보류 중
-<br>
-<br>
 <br>
 
 ###### 풀이는 블로그에

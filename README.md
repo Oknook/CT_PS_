@@ -1,10 +1,9 @@
 # CodingTest & Problem Solving
 ### BOJ, leetcode, programmers, etc...
-<br>
-<br>
 
 ###### C++      for BOJ, leetcode(first)
 ###### python3  for programmers, leetcode(second)
+<br>
 <br>
 
 ##### baekjoon(BOJ)

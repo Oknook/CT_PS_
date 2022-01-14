@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// not my code
 int findMinArrowShots(vector<vector<int>>& points) {
     int n = points.size(), index=0;
     sort(points.begin(), points.end());

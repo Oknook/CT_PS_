@@ -13,9 +13,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n, tmp;
+    int n, tmp, currentnum;
+    int ptr = 0, i = 0, cnt = 0;
     vector<int> v;
-    bool start = true;
+    vector<int> stack;
+    vector<char> ans;
 
     cin >> n;
     for (int i = 0; i < n; i++)
@@ -23,33 +25,32 @@ int main()
         cin >> tmp;
         v.push_back(tmp);
     }
-    
-    for (int i = 1; i < v.size(); i++)
+
+    do
     {
-        if (v[i] == v[i-1]+1)
+        while (ptr < v[i])
         {
-            cout << "NO";
-            start = false;
-            break;
+            stack.push_back(++ptr);
+            ans.push_back('+');
         }
-    }
-    if (start)
-    {
-        int current = 0, maxnum = 0;
-        for (int i = 0; i < v.size(); i++)
+        currentnum = stack.back();
+        if (currentnum == v[i])
         {
-            while (maxnum < v[i])
-            {
-                maxnum++;
-                current = maxnum;
-                cout << "+\n";
-            }
-            if (current == v[i])
-            {
-                current--;
-                cout << "-\n";
-            }
-    }
+            stack.pop_back();
+            cnt++;
+            ans.push_back('-');
+        }
+        i++;
+    } while (i < n);
+
+    if (cnt != n) cout << "NO";
+    else
+    {
+        for (int i = 0; i < ans.size(); i++)
+        {
+            cout << ans[i] << "\n";
+        }
+    }   
 
     return 0;
 }

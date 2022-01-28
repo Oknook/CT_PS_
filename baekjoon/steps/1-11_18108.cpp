@@ -1,8 +1,4 @@
 #include <iostream>
-#include <string>
-#include <cmath>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
@@ -12,7 +8,9 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n;
+    int y;
+    cin >> y;
+    cout << y-543;
 
     return 0;
 }

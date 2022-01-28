@@ -1,8 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cmath>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
@@ -12,7 +9,9 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n;
+    string id;
+    cin >> id;
+    cout << id + "\?\?!";
 
     return 0;
 }

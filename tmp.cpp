@@ -13,14 +13,20 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n = 0;
-    while (n < 10)
+    string str;
+    getline(cin, str);
+
+    int n;
+    cin >> n;
+    cin.ignore();
+
+    for (int i = 0; i < n; i++)
     {
-        cout << "n1 : " << n;
-        n++;
-        cout << " n2 : " << n << "\n";
+        string tmp;
+        getline(cin, tmp);
+        cout << tmp +"!\n";
     }
-    cout << "end : " << n;
+    
 
     return 0;
 }

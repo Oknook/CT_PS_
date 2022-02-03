@@ -1,9 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cmath>
-#include <algorithm>
-#include <vector>
-#include <tuple>
 
 using namespace std;
 
@@ -13,7 +9,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cout << 10%3;
-    
+    string n;
+    getline(cin, n);
+    for (int i = 0; i < n.length(); i++)
+    {
+        if(i % 10 == 0 && i != 0) cout << "\n";
+        cout << n[i];
+    }
+
     return 0;
 }

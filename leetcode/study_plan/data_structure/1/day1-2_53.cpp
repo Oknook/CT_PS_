@@ -1,14 +1,33 @@
 #include <iostream>
-#include <string>
-#include <cmath>
-#include <algorithm>
 #include <vector>
-#include <tuple>
-#include <limits.h>
 
 using namespace std;
 
 // 53. Maximum Subarray (Array, Divide and Conquer)
+
+// kadane's algorithm
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        int maxSum = INT_MIN;
+        int currSum = 0;
+
+        for (int i = 0; i <= n - 1; i++) {
+            currSum += nums[i];
+
+            if (currSum > maxSum) {
+                maxSum = currSum;
+            }
+
+            if (currSum < 0) {
+                currSum = 0;
+            }
+        }
+
+        return maxSum;
+    }
+};
 
 int main()
 {
@@ -16,43 +35,9 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int mx = 0;
-    
-    vector<int> nums = {-1};
-    vector<int> candidates = {};
-    vector<int>::iterator iter;
-    vector<int>::iterator iter2;
-    vector<int>::iterator iter3;
-    
-    for (int i = 0; i < nums.size(); i++)
-    {
-        mx += nums[i];
-    }
-    candidates.push_back(mx);
-    
-    for (iter = nums.begin(); iter != nums.end(); iter++)
-    {
-        for (iter2 = iter; iter2 != nums.end(); iter2++)
-        {
-            int tmp = INT_MIN;
-            for (iter3 = iter; iter3 != iter2; iter3++)
-            {
-                tmp += *iter3;
-            }
-            tmp -= INT_MIN;
-            candidates.push_back(tmp);
-        }
-    }
-    
-    mx = candidates[0];
-    if(candidates.size() >= 2)
-    {
-        for (int i = 1; i < candidates.size(); i++)
-        {
-            mx = max(mx, candidates[i]);
-        }
-    }
-    cout << mx;
+    vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
+    Solution sol;
+    cout << sol.maxSubArray(nums);
 
     return 0;
 }

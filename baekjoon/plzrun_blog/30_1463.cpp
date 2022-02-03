@@ -1,9 +1,4 @@
 #include <iostream>
-#include <string>
-#include <cmath>
-#include <algorithm>
-#include <vector>
-#include <tuple>
 
 using namespace std;
 
@@ -13,7 +8,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cout << 10%3;
-    
+    int n, cnt = 0;
+    cin >> n;
+
+    while (/* condition */)
+    {
+        /* code */
+    }
+
     return 0;
 }

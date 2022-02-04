@@ -13,7 +13,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cout << 10%3;
+    int n;
     
     return 0;
 }

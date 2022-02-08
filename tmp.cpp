@@ -3,7 +3,7 @@
 #include <cmath>
 #include <algorithm>
 #include <vector>
-#include <tuple>
+#include <set>
 
 using namespace std;
 
@@ -13,7 +13,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n;
+    string s = "asdf";
+    string t = "asdfa";
+    multiset<char> tt(t.begin(), t.end());
+    for(int i = 0; i < s.length(); i++) {
+        tt.erase(tt.find(s[i]));
+    }
+    cout << *tt.upper_bound('A');
     
     return 0;
 }

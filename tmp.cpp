@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include <set>
+#include <unordered_set>
 
 using namespace std;
 
@@ -13,13 +14,13 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s = "asdf";
-    string t = "asdfa";
-    multiset<char> tt(t.begin(), t.end());
-    for(int i = 0; i < s.length(); i++) {
-        tt.erase(tt.find(s[i]));
-    }
-    cout << *tt.upper_bound('A');
+    unordered_set<int> s;
+    s.insert(1);
+    s.insert(4);
+    s.insert(3);
+    s.insert(2);
+    s.insert(5);
+    cout << s.find(3)-s.begin();
     
     return 0;
 }

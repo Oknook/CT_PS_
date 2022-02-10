@@ -5,6 +5,8 @@
 #include <vector>
 #include <set>
 #include <unordered_set>
+#include <unordered_map>
+#include <typeinfo>
 
 using namespace std;
 
@@ -14,13 +16,17 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    unordered_set<int> s;
-    s.insert(1);
-    s.insert(4);
-    s.insert(3);
-    s.insert(2);
-    s.insert(5);
-    cout << s.find(3)-s.begin();
+    unordered_map<int, int> seen = {{3, 3}};
+
+    for (auto iter = seen.begin() ; iter != seen.end(); iter++)
+    {
+        cout << iter->first << " " << iter->second << endl;
+    } cout << endl;
+
+    for (auto i : seen) {
+        cout << i.first << " " << i.second << "\n";
+    }
+    
     
     return 0;
 }

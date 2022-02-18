@@ -30,8 +30,13 @@ int main()
     // }
     
     queue<int> s;
-    vector<int> a;
-    a.push_back
+    vector<int> a = {1,2,3,4,5,6,7,8,9};
+    auto iter = a.begin()+5;
+    cout << *iter;
+    auto iter2 = next(iter);
+    cout << *iter2 << "\n";
+    cout << *iter;
+
     
     return 0;
 }

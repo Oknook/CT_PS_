@@ -1,28 +1,27 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <deque>
 
 using namespace std;
 
 // reduce execute time to BOJ!
 int main()
 {
+    deque<int> d;
     int n;
     cin >> n;
-    vector<int> v;
-    for (int i = 0; i < n; i++)
-    {
-        v[i] = i+1;
-    }
-    if (n % 2 == 0)
-    {
-        cout << "1";
-    }
-    else
-    {
-        cout << "2";
-    }
     
+    for (int i = 1; i <= n; i++) {
+        d.push_back(i);
+    }
+    while (d.size() != 1) {
+        d.pop_front();
+        d.push_back(d.front());
+        d.pop_front();
+    }
+    cout << d[0];
+
     // while (1)
     // {
     //     vector<int> v;

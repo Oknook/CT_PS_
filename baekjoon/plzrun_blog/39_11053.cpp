@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <cmath>
 
 using namespace std;
@@ -9,8 +10,29 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int answer = 0, currmax = 0;
-    answer = max(answer, currmax);
+    int n, mx;
+    cin >> n;
+    vector<int> v(n);
+    vector<int> ans(n);
+    fill_n(ans.begin(), n, 1);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (v[i] > v[j])
+            {
+                int tmp = max(ans[i], ans[j]+1);
+                ans[i] = tmp;
+                mx = tmp>mx?tmp:mx;
+            }
+        }
+    }
+    cout << mx;
 
     return 0;
 }

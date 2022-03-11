@@ -9,14 +9,14 @@
 #include <typeinfo>
 #include <stack>
 #include <queue>
+#include <typeinfo>
 
 using namespace std;
 
 int main()
 {
-    string a = "a";
-    string b = "b";
-    a.find()
-
+    string a = "123+456";
+    string b = a.substr(a.find('+'));
+    cout << b;
     return 0;
 }

@@ -15,8 +15,23 @@ using namespace std;
 
 int main()
 {
-    string a = "123+456";
-    string b = a.substr(a.find('+'));
-    cout << b;
-    return 0;
+    string s = "cbacdcbc";
+    string ans = "";
+        
+    queue<char> q;
+    for (char c : s) {
+        if (q.front() > c) {
+            while(!q.empty()) {
+                q.pop();
+            }
+        }
+        q.push(c);
+    }
+
+    while (!q.empty()) {
+        if (ans.find(q.front()) == string::npos) ans += q.front();
+        q.pop();
+    }
+    
+    cout << ans;
 }

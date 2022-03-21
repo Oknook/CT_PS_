@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// 아직 못맞춤
+
 int main()
 {
     string str;

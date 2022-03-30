@@ -15,23 +15,11 @@ using namespace std;
 
 int main()
 {
-    string s = "cbacdcbc";
-    string ans = "";
-        
-    queue<char> q;
-    for (char c : s) {
-        if (q.front() > c) {
-            while(!q.empty()) {
-                q.pop();
-            }
-        }
-        q.push(c);
-    }
+    int a = 1;
+    int* b = &a;
+    int c = 1;
+    a++;
+    cout << a << " " << *b << " " << c;
 
-    while (!q.empty()) {
-        if (ans.find(q.front()) == string::npos) ans += q.front();
-        q.pop();
-    }
-    
-    cout << ans;
+    return 0;
 }

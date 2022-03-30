@@ -1,7 +1,5 @@
 # CodingTest & Problem Solving
 ## BOJ, leetcode, programmers, etc...
-###### C++      for BOJ, leetcode(first)
-###### python3  for programmers, leetcode(second)
 <br>
 <br>
 

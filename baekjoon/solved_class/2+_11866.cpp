@@ -1,5 +1,7 @@
 #include <iostream>
+#include <queue>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -9,26 +11,37 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n, k;
+    int n,k;
     cin >> n >> k;
-    vector<int> v(n);
-    vector<bool> b(n);
-    fill_n(b.begin(), b.end(), true);
-
-    for (int i = 1; i < n; i++)
-    {
-        v[i] = i;
-    }
-    v[0] = n;
-
-    int cnt = n;
-    vector<int> answer;
-    while(n)
-    {
-        if(b[k])
+    queue<int> q;
+    for (int i = 1; i <= n; i++) {
+        q.push(i);
     }
 
-    cout << "<" << answer[0] << ", " << answer[1] << ", " << answer[2] << ", " << answer[3] << ", " << answer[4] << ", " << answer[5] << ", " << answer[6] << ">";
-
+    for (int j = 1; j < k; j++) {
+        int tmp = q.front();
+        q.push(tmp);
+        q.pop();
+    }
+    
+    vector<int> v;
+    while (v.size() != n) {
+        v.push_back(q.front());
+        q.pop();
+        for (int a = 1; a < k; a++) {
+            q.push(q.front());
+            q.pop();
+        }
+    }
+    
+    string answer = "<";
+    for (auto i : v) {
+        answer += to_string(i);
+        answer += ", ";
+    }
+    answer.erase(answer.end()-2, answer.end());
+    answer += ">";
+    cout << answer;
+    
     return 0;
 }

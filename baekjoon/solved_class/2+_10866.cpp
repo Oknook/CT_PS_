@@ -13,12 +13,11 @@ int main()
 
     int n;
     cin >> n;
+    cin.ignore();
 
-    vector<string> v;
+    vector<string> v(n);
     for (int i = 0; i < n; i++) {
-        string tmp;
-        cin >> tmp;
-        v.push_back(tmp);
+        getline(cin, v[i]);
     }
 
     deque<int> d;
@@ -27,12 +26,22 @@ int main()
         {
         case 'p':
             if (v[i][1] == 'u') {
-                auto iter = v[i].end()-1;
-                int j = (*iter)-'0';
+                // auto iter = v[i].end()-1;
+                // int j = (*iter)-'0';
                 if (v[i][5] == 'f') {
+                    int j = 0;
+                    for (int z = 11; z < v[i].length(); z++) {
+                        j *= 10;
+                        j += v[i][z]-'0';
+                    }
                     d.push_front(j);
                 }
                 else {
+                    int j = 0;
+                    for (int z = 10; z < v[i].length(); z++) {
+                        j *= 10;
+                        j += v[i][z]-'0';
+                    }
                     d.push_back(j);
                 }
             }
@@ -60,21 +69,17 @@ int main()
 
         case 'e':
             if (d.empty()) cout << 1 << "\n";
-            else cout << 0;
+            else cout << 0 << "\n";
             break;
 
         case 'f':
             if (d.empty()) cout << -1 << "\n";
-            else {
-                cout << d.front() << "\n";
-            }
+            else cout << d.front() << "\n";
             break;
 
         case 'b':
             if (d.empty()) cout << -1 << "\n";
-            else {
-                cout << d.back() << "\n";
-            }
+            else cout << d.back() << "\n";
             break;
         }
     }

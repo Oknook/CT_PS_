@@ -12,11 +12,14 @@ public class Main {
 
         int cnt = 0;
         for (int i = 1; i <= N; i++) {
-            if (i-2 <= a && a <= i+2) continue;
+            if (Math.abs(i - a) <= 2) continue;
+
             for (int j = 1; j <= N; j++) {
-                if (j-2 <= b && b <= j+2) continue;
+                if (Math.abs(j - b) <= 2) continue;
+
                 for (int k = 1; k <= N; k++) {
-                    if (k-2 <= c && c <= k+2) continue;
+                    if (Math.abs(k - c) <= 2) continue;
+
                     cnt++;
                 }
             }

@@ -12,11 +12,11 @@ public class Main {
 
         int cnt = 0;
         for (int i = 1; i <= N; i++) {
+            if (i-2 <= a && a <= i+2) continue;
             for (int j = 1; j <= N; j++) {
+                if (j-2 <= b && b <= j+2) continue;
                 for (int k = 1; k <= N; k++) {
-                    if ((a < i-2 || a > i+2)
-                    && (b < j-2 || b > j+2)
-                    && (c < k-2 || c > k+2))
+                    if (k-2 <= c && c <= k+2) continue;
                     cnt++;
                 }
             }
